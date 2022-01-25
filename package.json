@@ -1,11 +1,22 @@
 {
 	"name": "nasa-api-neows",
 	"version": "1.0.0",
-	"description": "",
-	"keywords": [],
+	"description": "A mini site that lists Asteroids based on their closest approach date to Earth (taken from NASA's NeoWs open API).",
+	"keywords": [
+		"frontend",
+		"nasa",
+		"asteroids",
+		"nasa-api",
+		"near-earth-objects",
+		"neows",
+		"nasa-api-neows"
+	],
 	"license": "ISC",
 	"author": "Germán Freixinós López (https://germanfreixinos.com)",
-	"browserslist": "> 0.5%, last 2 versions, not dead",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/germanfrelo/nasa-api-neows.git"
+	},
 	"scripts": {
 		"build": "parcel build src/index.html",
 		"format-check": "prettier --check src/",
@@ -33,6 +44,7 @@
 		"parcel": "2.2.1",
 		"prettier": "2.5.1"
 	},
+	"browserslist": "> 0.5%, last 2 versions, not dead",
 	"@parcel/transformer-css": {
 		"drafts": {
 			"nesting": true
