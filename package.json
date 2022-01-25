@@ -17,6 +17,9 @@
 		"type": "git",
 		"url": "https://github.com/germanfrelo/nasa-api-neows.git"
 	},
+	"bugs": {
+		"url": "https://github.com/germanfrelo/nasa-api-neows/issues"
+	},
 	"scripts": {
 		"build": "parcel build src/index.html",
 		"format-check": "prettier --check src/",
