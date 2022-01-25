@@ -11,6 +11,7 @@
 		"neows",
 		"nasa-api-neows"
 	],
+	"homepage": "https://github.com/germanfrelo/nasa-api-neows#readme",
 	"license": "MIT",
 	"author": "Germán Freixinós López (https://germanfreixinos.com)",
 	"repository": {
