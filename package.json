@@ -11,7 +11,7 @@
 		"neows",
 		"nasa-api-neows"
 	],
-	"license": "ISC",
+	"license": "MIT",
 	"author": "Germán Freixinós López (https://germanfreixinos.com)",
 	"repository": {
 		"type": "git",
