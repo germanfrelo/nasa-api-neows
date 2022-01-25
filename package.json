@@ -22,12 +22,12 @@
 		"url": "https://github.com/germanfrelo/nasa-api-neows/issues"
 	},
 	"scripts": {
-		"build": "parcel build src/index.html",
+		"build": "npm run test && parcel build src/index.html",
 		"format-check": "prettier --check src/",
 		"format-fix": "prettier --write src/",
 		"lint": "eslint src/",
 		"start": "parcel src/index.html",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "node tests/*.js"
 	},
 	"dependencies": {
 		"date-fns": "2.28.0",
@@ -42,6 +42,7 @@
 		"@babel/preset-react": "7.16.7",
 		"@parcel/optimizer-css": "^2.2.1",
 		"@parcel/transformer-css-experimental": "2.2.1",
+		"axios": "0.25.0",
 		"eslint": "8.7.0",
 		"eslint-config-prettier": "8.3.0",
 		"eslint-plugin-react": "7.28.0",
