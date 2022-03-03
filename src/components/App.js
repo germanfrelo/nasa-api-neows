@@ -21,8 +21,8 @@ export default function App() {
 
 		return (
 			<p>
-				Getting data from NASA right now to check whether something from
-				space is going to hit us. One moment…
+				Getting data from NASA right now to check whether something from space
+				is going to hit us. One moment…
 			</p>
 		);
 	}
@@ -35,9 +35,7 @@ export default function App() {
 		return acc;
 	}, 0);
 
-	document.title = `${hazards} potential HAZARDS ${
-		hazards > 0 ? '😱' : '👍'
-	}`;
+	document.title = `${hazards} potential HAZARDS ${hazards > 0 ? '😱' : '👍'}`;
 
 	const results = data.result.near_earth_objects[day];
 	return (
