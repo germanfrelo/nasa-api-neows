@@ -1,6 +1,6 @@
-import React from 'react';
-import formatNumber from 'format-number';
 import format from 'date-fns/format';
+import formatNumber from 'format-number';
+import React from 'react';
 
 const formatter = formatNumber({
 	integerSeparator: '\u00A0',
