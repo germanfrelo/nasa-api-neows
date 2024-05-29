@@ -8,7 +8,7 @@ html {
 	background-color: #270237;
 	/* background-image: url('img/stars.svg'), url('img/asteriod2.svg'),
 	url('img/asteriod1.svg'), url('img/bg.svg'); */
-	background-image: url('img/stars.svg'), url('img/bg.svg');
+	background-image: url("img/stars.svg"), url("img/bg.svg");
 	/* linear-gradient(to bottom, #270237, #1b3454, #2d4a69, #3f607f, #537895); */
 	background-repeat: repeat, no-repeat;
 	background-size: auto, cover;
@@ -21,32 +21,31 @@ body {
 	max-width: 600px;
 	margin: 0 auto;
 	padding: 20px;
-	font-family: 'Ubuntu Mono', Menlo, Consolas, Monaco, Liberation Mono,
-		Lucida Console, monospace;
+	font-family: "Ubuntu Mono", Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
 	font-size: 24px;
 
 	/* background: #212121; */
 	color: #dfdfdf;
 
 	&:before {
-		content: '';
+		content: "";
 		position: absolute;
 		left: -150px;
 		width: 100px;
 		height: 200px;
-		background-image: url('img/asteriod2.svg');
+		background-image: url("img/asteriod2.svg");
 		background-repeat: no-repeat;
 		background-size: 100px;
 	}
 
 	&:after {
-		content: '';
+		content: "";
 		position: absolute;
 		right: -150px;
 		width: 100px;
 		height: 200px;
 		top: 200px;
-		background-image: url('img/asteriod1.svg');
+		background-image: url("img/asteriod1.svg");
 		background-repeat: no-repeat;
 		background-size: 100px;
 	}
