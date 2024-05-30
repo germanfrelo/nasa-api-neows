@@ -10,7 +10,7 @@ function getDate(d = new Date()) {
 
 const fetchData = () =>
 	fetch(
-		`https://api.nasa.gov/neo/rest/v1/feed?start_date=${getDate()}&api_key=DEMO_KEY`
+		`https://api.nasa.gov/neo/rest/v1/feed?start_date=${getDate()}&api_key=DEMO_KEY`,
 	).then((res) => res.json());
 
 export default function App() {
