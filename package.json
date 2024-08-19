@@ -42,7 +42,7 @@
 		"@babel/preset-react": "7.24.6",
 		"@parcel/optimizer-css": "2.12.0",
 		"@parcel/transformer-css-experimental": "2.3.2",
-		"axios": "0.28.0",
+		"axios": "1.7.4",
 		"eslint": "8.57.0",
 		"eslint-config-prettier": "8.10.0",
 		"eslint-plugin-react": "7.34.2",
