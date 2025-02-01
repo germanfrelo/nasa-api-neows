@@ -49,7 +49,7 @@
 		"eslint-config-prettier": "8.10.0",
 		"eslint-plugin-react": "7.34.2",
 		"husky": "9.1.7",
-		"parcel": "2.12.0",
+		"parcel": "2.13.3",
 		"prettier": "3.4.2"
 	},
 	"browserslist": "> 0.5%, last 2 versions, not dead",
