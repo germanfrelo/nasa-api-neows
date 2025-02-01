@@ -1,3 +1,10 @@
+### Node ###
+
+# Dependencies directory
 node_modules/
+
+### Parcel ###
+
+# Build output
 dist/
 .parcel-cache/
