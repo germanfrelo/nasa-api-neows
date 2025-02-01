@@ -4,6 +4,6 @@
 		"EditorConfig.EditorConfig",
 		"esbenp.prettier-vscode",
 		// Linting
-		"dbaeumer.vscode-eslint",
+		"dbaeumer.vscode-eslint"
 	]
 }

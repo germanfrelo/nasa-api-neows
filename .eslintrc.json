@@ -4,10 +4,7 @@
 		"browser": true,
 		"node": true
 	},
-	"extends": [
-		"eslint:recommended",
-		"plugin:react/recommended"
-	],
+	"extends": ["eslint:recommended", "plugin:react/recommended"],
 	"parser": "@babel/eslint-parser",
 	"parserOptions": {
 		"ecmaVersion": 6,
@@ -18,14 +15,10 @@
 		"requireConfigFile": "false",
 		"babelOptions": {
 			"configFile": "./.babelrc",
-			"presets": [
-				"@babel/preset-react"
-			]
+			"presets": ["@babel/preset-react"]
 		}
 	},
-	"plugins": [
-		"react"
-	],
+	"plugins": ["react"],
 	"rules": {
 		"no-console": 0,
 		"react/jsx-uses-react": "error",
