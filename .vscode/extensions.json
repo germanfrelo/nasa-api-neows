@@ -1,5 +1,7 @@
 {
 	"recommendations": [
+		// Astro
+		"astro-build.astro-vscode",
 		// Formatting
 		"EditorConfig.EditorConfig",
 		"esbenp.prettier-vscode",

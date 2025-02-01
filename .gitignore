@@ -1,10 +1,16 @@
+### Astro ###
+
+# generated types
+.astro/
+
+# build output
+dist/
+
+# environment variables
+.env
+.env.production
+
 ### Node ###
 
-# Dependencies directory
+# Dependency directories
 node_modules/
-
-### Parcel ###
-
-# Build output
-dist/
-.parcel-cache/

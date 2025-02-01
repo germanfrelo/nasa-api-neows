@@ -1,4 +1,3 @@
-import React from "react";
 import Hazard from "./Hazard";
 import Passing from "./Passing";
 
