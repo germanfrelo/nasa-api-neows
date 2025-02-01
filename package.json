@@ -24,15 +24,20 @@
 	"author": "Germán Freixinós",
 	"type": "module",
 	"scripts": {
-		"build": "npm run test && parcel build src/index.html",
+		"astro": "astro",
+		"build": "astro build",
+		"dev": "astro dev",
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
-		"lint": "eslint src/",
 		"prepare": "husky",
-		"start": "parcel src/index.html",
-		"test": "node tests/*.js"
+		"preview": "astro preview",
+		"test": "node src/tests/*.js"
 	},
 	"dependencies": {
+		"@astrojs/react": "4.2.0",
+		"@types/react": "19.0.8",
+		"@types/react-dom": "19.0.3",
+		"astro": "5.2.3",
 		"date-fns": "4.1.0",
 		"format-number": "3.0.0",
 		"react": "18.3.1",
@@ -40,22 +45,9 @@
 		"react-dom": "18.3.1"
 	},
 	"devDependencies": {
-		"@babel/core": "7.24.6",
-		"@babel/eslint-parser": "7.24.6",
-		"@babel/preset-react": "7.24.6",
-		"@parcel/optimizer-css": "2.12.0",
-		"@parcel/transformer-css-experimental": "2.3.2",
-		"eslint": "8.57.0",
-		"eslint-config-prettier": "8.10.0",
-		"eslint-plugin-react": "7.34.2",
 		"husky": "9.1.7",
-		"parcel": "2.12.0",
-		"prettier": "3.4.2"
+		"prettier": "3.4.2",
+		"prettier-plugin-astro": "0.14.1"
 	},
-	"browserslist": "> 0.5%, last 2 versions, not dead",
-	"@parcel/transformer-css": {
-		"drafts": {
-			"nesting": true
-		}
-	}
+	"browserslist": "> 0.5%, last 2 versions, not dead"
 }

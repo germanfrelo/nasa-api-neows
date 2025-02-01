@@ -6,9 +6,9 @@ body {
 
 html {
 	background-color: #270237;
-	/* background-image: url('img/stars.svg'), url('img/asteriod2.svg'),
-	url('img/asteriod1.svg'), url('img/bg.svg'); */
-	background-image: url("img/stars.svg"), url("img/bg.svg");
+	/* background-image: url('../assets/stars.svg'), url('../assets/asteriod2.svg'),
+	url('../assets/asteriod1.svg'), url('../assets/bg.svg'); */
+	background-image: url("../assets/stars.svg"), url("../assets/bg.svg");
 	/* linear-gradient(to bottom, #270237, #1b3454, #2d4a69, #3f607f, #537895); */
 	background-repeat: repeat, no-repeat;
 	background-size: auto, cover;
@@ -33,29 +33,29 @@ body {
 
 	/* background: #212121; */
 	color: #dfdfdf;
+}
 
-	&:before {
-		content: "";
-		position: absolute;
-		left: -150px;
-		width: 100px;
-		height: 200px;
-		background-image: url("img/asteriod2.svg");
-		background-repeat: no-repeat;
-		background-size: 100px;
-	}
+body::before {
+	content: "";
+	position: absolute;
+	left: -150px;
+	width: 100px;
+	height: 200px;
+	background-image: url("../assets/asteriod2.svg");
+	background-repeat: no-repeat;
+	background-size: 100px;
+}
 
-	&:after {
-		content: "";
-		position: absolute;
-		right: -150px;
-		width: 100px;
-		height: 200px;
-		top: 200px;
-		background-image: url("img/asteriod1.svg");
-		background-repeat: no-repeat;
-		background-size: 100px;
-	}
+body::after {
+	content: "";
+	position: absolute;
+	right: -150px;
+	width: 100px;
+	height: 200px;
+	top: 200px;
+	background-image: url("../assets/asteriod1.svg");
+	background-repeat: no-repeat;
+	background-size: 100px;
 }
 
 h1 {

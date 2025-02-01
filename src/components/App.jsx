@@ -1,6 +1,6 @@
 import addDays from "date-fns/addDays";
 import format from "date-fns/format";
-import React from "react";
+import { useEffect } from "react";
 import { useAsync } from "react-async-hook";
 import Orbital from "./Orbital";
 
@@ -16,9 +16,26 @@ const fetchData = () =>
 export default function App() {
 	const data = useAsync(fetchData, []);
 
-	if (data.loading) {
-		document.title = "Counting potential earth HAZARDS…";
+	// Handle document.title updates correctly
+	useEffect(() => {
+		if (data.loading) {
+			document.title = "Counting potential earth HAZARDS…";
+		} else if (data.result) {
+			const day = getDate(addDays(new Date(), 1));
 
+			if (data.result.near_earth_objects?.[day]) {
+				const hazards = data.result.near_earth_objects[day].reduce(
+					(acc, curr) =>
+						curr.is_potentially_hazardous_asteroid ? acc + 1 : acc,
+					0,
+				);
+				document.title = `${hazards} potential HAZARDS ${hazards > 0 ? "😱" : "👍"}`;
+			}
+		}
+	}, [data.loading, data.result]);
+
+	// Handle loading state
+	if (data.loading) {
 		return (
 			<p>
 				Getting data from NASA right now to check whether something from space
@@ -28,23 +45,21 @@ export default function App() {
 	}
 
 	const day = getDate(addDays(new Date(), 1));
-	const hazards = data.result.near_earth_objects[day].reduce((acc, curr) => {
-		if (curr.is_potentially_hazardous_asteroid) {
-			return acc + 1;
-		}
-		return acc;
-	}, 0);
 
-	document.title = `${hazards} potential HAZARDS ${hazards > 0 ? "😱" : "👍"}`;
+	// Ensure `near_earth_objects` exists before accessing it
+	if (!data.result?.near_earth_objects?.[day]) {
+		return <p>No data available for the selected date.</p>;
+	}
 
 	const results = data.result.near_earth_objects[day];
+
 	return (
 		<div>
 			<p>
 				{format(addDays(new Date(), 1), "EEEE d-MMM")} there will be{" "}
 				<strong>{results.length}</strong> near misses
 			</p>
-			<hr></hr>
+			<hr />
 			{results
 				.sort((a) => (a.is_potentially_hazardous_asteroid ? -1 : 1))
 				.map((data) => (
