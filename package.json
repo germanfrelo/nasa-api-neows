@@ -21,6 +21,7 @@
 	"bugs": {
 		"url": "https://github.com/germanfrelo/nasa-api-neows/issues"
 	},
+	"type": "module",
 	"scripts": {
 		"build": "npm run test && parcel build src/index.html",
 		"format-check": "prettier --check src/",
