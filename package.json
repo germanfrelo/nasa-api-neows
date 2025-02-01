@@ -24,8 +24,8 @@
 	"type": "module",
 	"scripts": {
 		"build": "npm run test && parcel build src/index.html",
-		"format-check": "prettier --check src/",
-		"format-fix": "prettier --write src/",
+		"format": "prettier --write .",
+		"format:check": "prettier --check .",
 		"lint": "eslint src/",
 		"prepare": "husky",
 		"start": "parcel src/index.html",
