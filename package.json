@@ -23,7 +23,6 @@
 	"license": "MIT",
 	"author": "Germán Freixinós",
 	"type": "module",
-	"main": "",
 	"scripts": {
 		"build": "npm run test && parcel build src/index.html",
 		"format": "prettier --write .",
