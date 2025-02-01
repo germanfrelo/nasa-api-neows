@@ -1,6 +1,6 @@
 /* eslint-env node */
 
-const { addDays } = require("date-fns");
+import { addDays } from "date-fns";
 
 function getDate(d = new Date()) {
 	return d.toJSON().split("T")[0];
