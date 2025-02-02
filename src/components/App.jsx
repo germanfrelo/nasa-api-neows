@@ -1,40 +1,42 @@
 import { addDays, format } from "date-fns";
-import { useEffect } from "react";
-import { useAsync } from "react-async-hook";
+import { useEffect, useState } from "react";
 import Orbital from "./Orbital";
 
 function getDate(d = new Date()) {
 	return d.toJSON().split("T")[0];
 }
 
-const fetchData = () =>
-	fetch(
+const fetchData = async () => {
+	const response = await fetch(
 		`https://api.nasa.gov/neo/rest/v1/feed?start_date=${getDate()}&api_key=DEMO_KEY`,
-	).then((res) => res.json());
+	);
+	return response.json();
+};
 
 export default function App() {
-	const data = useAsync(fetchData, []);
+	const [data, setData] = useState(null);
+	const [loading, setLoading] = useState(true);
 
-	// Handle document.title updates correctly
 	useEffect(() => {
-		if (data.loading) {
+		fetchData()
+			.then((result) => setData(result))
+			.finally(() => setLoading(false));
+	}, []);
+
+	useEffect(() => {
+		if (loading) {
 			document.title = "Counting potential earth HAZARDS…";
-		} else if (data.result) {
+		} else if (data) {
 			const day = getDate(addDays(new Date(), 1));
-
-			if (data.result.near_earth_objects?.[day]) {
-				const hazards = data.result.near_earth_objects[day].reduce(
-					(acc, curr) =>
-						curr.is_potentially_hazardous_asteroid ? acc + 1 : acc,
-					0,
-				);
-				document.title = `${hazards} potential HAZARDS ${hazards > 0 ? "😱" : "👍"}`;
-			}
+			const hazards =
+				data.near_earth_objects?.[day]?.filter(
+					(obj) => obj.is_potentially_hazardous_asteroid,
+				).length || 0;
+			document.title = `${hazards} potential HAZARDS ${hazards > 0 ? "😱" : "👍"}`;
 		}
-	}, [data.loading, data.result]);
+	}, [loading, data]);
 
-	// Handle loading state
-	if (data.loading) {
+	if (loading) {
 		return (
 			<p>
 				Getting data from NASA right now to check whether something from space
@@ -44,13 +46,11 @@ export default function App() {
 	}
 
 	const day = getDate(addDays(new Date(), 1));
+	const results = data?.near_earth_objects?.[day] || [];
 
-	// Ensure `near_earth_objects` exists before accessing it
-	if (!data.result?.near_earth_objects?.[day]) {
+	if (!results.length) {
 		return <p>No data available for the selected date.</p>;
 	}
-
-	const results = data.result.near_earth_objects[day];
 
 	return (
 		<div>
