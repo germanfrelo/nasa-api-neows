@@ -1,5 +1,4 @@
-import addDays from "date-fns/addDays";
-import format from "date-fns/format";
+import { addDays, format } from "date-fns";
 import { useEffect } from "react";
 import { useAsync } from "react-async-hook";
 import Orbital from "./Orbital";
