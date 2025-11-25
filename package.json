@@ -34,7 +34,7 @@
 		"test": "node src/tests/*.js"
 	},
 	"dependencies": {
-		"@astrojs/react": "4.3.0",
+		"@astrojs/react": "4.4.2",
 		"@types/react": "19.2.7",
 		"@types/react-dom": "19.2.3",
 		"astro": "5.16.0",
