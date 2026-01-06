@@ -40,9 +40,9 @@
 		"astro": "5.16.0",
 		"date-fns": "4.1.0",
 		"format-number": "3.0.0",
-		"react": "19.2.0",
+		"react": "19.2.3",
 		"react-async-hook": "4.0.0",
-		"react-dom": "19.2.0"
+		"react-dom": "19.2.3"
 	},
 	"devDependencies": {
 		"husky": "9.1.7",
