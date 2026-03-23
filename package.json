@@ -35,14 +35,14 @@
 	},
 	"dependencies": {
 		"@astrojs/react": "4.4.2",
-		"@types/react": "19.2.8",
+		"@types/react": "19.2.14",
 		"@types/react-dom": "19.2.3",
 		"astro": "5.17.1",
 		"date-fns": "4.1.0",
 		"format-number": "3.0.0",
-		"react": "19.2.3",
+		"react": "19.2.4",
 		"react-async-hook": "4.0.0",
-		"react-dom": "19.2.3"
+		"react-dom": "19.2.4"
 	},
 	"devDependencies": {
 		"husky": "9.1.7",
